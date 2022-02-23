@@ -25,13 +25,29 @@ public class StartGame : MonoBehaviour
     }
     public void OnStart()
     {
-       
-        StartCoroutine(StartIn());
+
+        StartCoroutine("Restart");
 
     }
-    IEnumerator StartIn()
+    public void OpningStart()
     {
-    GameOver.SetActive(false);
+        Panel.SetActive(true);
+        StartCoroutine("OpenStart");
+    }
+   IEnumerator OpenStart()
+    {
+        float fadecount = 0.0f;
+        while (fadecount < 1.0f)
+        {
+            fadecount += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            Image.color = new Color(0, 0, 0, fadecount);
+        }
+        SceneManager.LoadScene("Game");
+    }
+    public IEnumerator Restart()
+    {
+
         Time.timeScale = 1;
         Panel.SetActive(true);
         float fadecount = 0.0f;
@@ -41,6 +57,7 @@ public class StartGame : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
             Image.color = new Color(0, 0, 0, fadecount);
         }
+        GameOver.SetActive(false);
         SceneManager.LoadScene("Game");
 
     }
