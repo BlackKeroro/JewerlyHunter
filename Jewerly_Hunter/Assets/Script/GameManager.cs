@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public bool isPause;
     public GameObject PauseOn;
     public GameObject GameOver;
-    bool isGameOver = false;
 
     public void Awake()
     {
@@ -51,13 +50,9 @@ public class GameManager : MonoBehaviour
         
         if (hp <= 0 || Player.transform.position.y < -8.0f)
         {
-            if(isGameOver == false)
-            {
-                hp = 0f;
-                GameOver.SetActive(true);
-                run.anim.SetTrigger("DieTrigger");
-                isGameOver = true;
-            }
+            hp = 0f;
+            GameOver.SetActive(true);
+            run.anim.SetTrigger("DieTrigger");
         }
     }
 

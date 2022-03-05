@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 version https://git-lfs.github.com/spec/v1
 oid sha256:5eab118849a97c4a47ab76095e59c93c2f16bc2903ecd50765760e6660e43340
 size 493
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"m_AlwaysRefresh":false,"showFog":true,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true,"showVisualEffectGraphs":true,"m_FxEnabled":true},"in2DMode":true,"pivot":{"x":612.1165771484375,"y":358.44927978515627,"z":-168.27481079101563},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":625.89208984375,"orthographic":true}
+>>>>>>> parent of f673373d (2/24 jewelryHunter)
