@@ -4349,6 +4349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Panel: {fileID: 820954666}
   GameOver: {fileID: 0}
+  Pause: {fileID: 0}
 --- !u!114 &2112386951
 MonoBehaviour:
   m_ObjectHideFlags: 0

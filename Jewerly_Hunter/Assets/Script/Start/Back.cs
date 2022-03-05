@@ -16,18 +16,5 @@ public class Back : MonoBehaviour
     {
         
     }
-    public void OnClick()
-    {
-        SceneManager.LoadScene("Start");
-    }
-    public void OffPause()
-    {
-        SceneManager.LoadScene("Start");
-        Time.timeScale = 1;
-    }
-    public void OffXPause()
-    {
-        GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(false);
-        Time.timeScale = 1;
-    }
+
 }

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-version https://git-lfs.github.com/spec/v1
-oid sha256:09df2854d5fc4c14321bb41511191e4f0c8e33d245669edae36df684ce505e10
-size 699
-=======
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!162 &1
@@ -30,4 +25,3 @@ EditorUserSettings:
   m_VCHierarchyOverlayIcons: 1
   m_VCOtherOverlayIcons: 1
   m_VCAllowAsyncUpdate: 0
->>>>>>> parent of f673373d (2/24 jewelryHunter)

@@ -11,6 +11,7 @@ public class StartGame : MonoBehaviour
 
 
     public GameObject GameOver;
+    public GameObject Pause;
 
     // Start is called before the first frame update
     void Start()
@@ -23,18 +24,43 @@ public class StartGame : MonoBehaviour
     {
 
     }
-    public void OnStart()
+    public void OnReStart()
     {
 
         StartCoroutine("Restart");
 
     }
+
+    public IEnumerator Restart()
+    {
+        if (GameOver.activeSelf == true)
+        {
+            GameOver.SetActive(false);
+        }
+        else if (Pause.activeSelf == true)
+        {
+            Pause.SetActive(false);
+        }
+
+        Time.timeScale = 1;
+        Panel.SetActive(true);
+        float fadecount = 0.0f;
+        while (fadecount < 1.0f)
+        {
+            fadecount += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            Image.color = new Color(0, 0, 0, fadecount);
+        }
+        SceneManager.LoadScene("Game");
+
+    }
+
     public void OpningStart()
     {
         Panel.SetActive(true);
         StartCoroutine("OpenStart");
     }
-   IEnumerator OpenStart()
+    IEnumerator OpenStart()
     {
         float fadecount = 0.0f;
         while (fadecount < 1.0f)
@@ -45,26 +71,15 @@ public class StartGame : MonoBehaviour
         }
         SceneManager.LoadScene("Game");
     }
-    public IEnumerator Restart()
-    {
 
+    public void OnHome()
+    {
+        SceneManager.LoadScene("Start");
         Time.timeScale = 1;
-        Panel.SetActive(true);
-        float fadecount = 0.0f;
-        while(fadecount < 1.0f)
-        {
-            fadecount += 0.01f;
-            yield return new WaitForSeconds(0.01f);
-            Image.color = new Color(0, 0, 0, fadecount);
-        }
-        GameOver.SetActive(false);
-        SceneManager.LoadScene("Game");
-
     }
-
-    public void OffPause()
+    public void OffXPause()
     {
-        SceneManager.LoadScene("Game");
+        GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(false);
         Time.timeScale = 1;
     }
 }
