@@ -24,7 +24,7 @@ public class UpTrap : MonoBehaviour
 
         if(Range < TRange + PRange && transform.position.y < -3.3f)
         {
-            transform.Translate(0, 0.03f, 0);
+            transform.Translate(0, 0.12f, 0);
             Debug.Log("실행");
             StartCoroutine("DT");
 

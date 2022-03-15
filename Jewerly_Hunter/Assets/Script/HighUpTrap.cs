@@ -25,7 +25,7 @@ public class HighUpTrap : MonoBehaviour
 
         if (Range < TRange + PRange && transform.position.y < -2.9f)
         {
-            Vector3 vec = new Vector3(0, 0.03f, 0);
+            Vector3 vec = new Vector3(0, 0.12f, 0);
             transform.Translate(vec, Space.World);
             Debug.Log("실행");
             StartCoroutine("DT");

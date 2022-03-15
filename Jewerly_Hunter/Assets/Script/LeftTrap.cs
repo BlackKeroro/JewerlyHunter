@@ -26,7 +26,7 @@ public class LeftTrap : MonoBehaviour
 
         if (Range < TRange + PRange)
         {
-            transform.Translate(-0.08f, 0f, 0f);
+            transform.Translate(-0.16f, 0f, 0f);
             StartCoroutine("DT");
         }
 

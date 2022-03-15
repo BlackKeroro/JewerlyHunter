@@ -30,7 +30,7 @@ public class Coin1 : MonoBehaviour
 
             if (Range < TRange + PRange)
             {
-                transform.position = Vector3.MoveTowards(transform.position, pc.transform.position, 0.2f);
+                transform.position = Vector3.MoveTowards(transform.position, pc.transform.position, 0.4f);
 
             }
         }

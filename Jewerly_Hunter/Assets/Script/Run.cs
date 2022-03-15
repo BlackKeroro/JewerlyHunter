@@ -60,6 +60,7 @@ public class Run : MonoBehaviour
                 if (GM.hp > 1) // 만약 GameManager의 hp가 1보다 클 경우
                 {
                     pc.isOndamage = true; //Ondamage 활성화
+                    pc.StartCoroutine("HitBlood");
                     pc.StartCoroutine("Ondamage"); //PlayerController의 Ondamage 코루틴 실행
                 }
             }

@@ -13,10 +13,13 @@ public class StartGame : MonoBehaviour
     public GameObject GameOver;
     public GameObject Pause;
 
+    GameManager GM;
+
     // Start is called before the first frame update
     void Start()
     {
         Image = Panel.GetComponent<Image>();
+        GM = GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -74,12 +77,26 @@ public class StartGame : MonoBehaviour
 
     public void OnHome()
     {
-        SceneManager.LoadScene("Start");
+        Panel.SetActive(true);
+        StartCoroutine("HomeStart");
+    }
+
+    IEnumerator HomeStart()
+    {
         Time.timeScale = 1;
+        float fadecount = 0.0f;
+        while (fadecount < 1.0f)
+        {
+            fadecount += 0.01f;
+            yield return new WaitForSeconds(0.01f);
+            Image.color = new Color(0, 0, 0, fadecount);
+        }
+        SceneManager.LoadScene("Start");
     }
     public void OffXPause()
     {
-        GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(false);
+        GM.isPause = false;
+        GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(false);
         Time.timeScale = 1;
     }
 }

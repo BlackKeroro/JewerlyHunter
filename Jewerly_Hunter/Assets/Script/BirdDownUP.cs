@@ -25,26 +25,14 @@ public class BirdDownUP : MonoBehaviour
 
         if (Range < TRange + PRange)
         {
-            transform.Translate(-0.06f, 0.0f, 0);
+            transform.Translate(-0.12f, 0.0f, 0);
             RoteTime += Time.deltaTime;
-            StartCoroutine("DT");
+            Destroy(gameObject, 4f);
         }
-        if(RoteTime > 0.3f)
+        if(transform.position.y < -0.4f)
         {
-            StartCoroutine("Rote");
+            transform.rotation = Quaternion.Euler(0, 0, -45f);
         }
         
-    }
-
-    IEnumerator Rote()
-    {
-        yield return new WaitForSeconds(1.0f);
-        transform.rotation = Quaternion.Euler(0, 0, -45f);
-    }
-
-    IEnumerator DT()
-    {
-        yield return new WaitForSeconds(4.0f);
-        Destroy(gameObject);
     }
 }

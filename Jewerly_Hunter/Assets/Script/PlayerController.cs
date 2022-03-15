@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour
         Move(); 
         Jump();
         Sliding();
+
+
     }
 
 
@@ -126,18 +128,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     public IEnumerator Ondamage() //피격 판정을 입었을 경우 Coroutine 실행
-    { 
+    {
         int countTime = 0; //캐릭터 투명도
-        Blood.SetActive(true); //피 이미지 활성화
-        float BloodTime = 100f; //피 이미지 a(투명도)값
-        while(BloodTime > 0) //BloodTime이 0 이상일 시 반복 실행
-        {
-            BloodImg.color = new Color(BloodImg.color.r, BloodImg.color.g, BloodImg.color.b, BloodTime / 255f); //피 이미지의 a값에 BloodTime 값을 적용
-            yield return new WaitForSeconds(0.01f); //대기시간 0.01초
-            BloodTime--;//BloodTime에 -1
-        }
         while (countTime < 10) //countTime이 10 보다 작을 시 반복 실행
         {
             if (countTime % 2 == 0) //countTIme에 2를 게속 나눌 때 나머지 값이 0일 경우
@@ -157,9 +150,24 @@ public class PlayerController : MonoBehaviour
         sr2.color = new Color(255f / 255f, 255f / 255f, 255f / 255f, 255 / 255f);
         countTime = 0; //countTime 초기화
         isOndamage = false; //Ondamage 비활성화
+        yield return null;
+    }
+
+    public IEnumerator HitBlood()
+    {
+
+        Blood.SetActive(true); //피 이미지 활성화
+        float BloodTime = 100f; //피 이미지 a(투명도)값
+        while (BloodTime > 0) //BloodTime이 0 이상일 시 반복 실행
+        {
+            //피 이미지의 a값에 BloodTime 값을 적용
+            BloodImg.color = new Color(BloodImg.color.r, BloodImg.color.g, BloodImg.color.b, BloodTime / 255f);
+            yield return new WaitForSeconds(0.01f); //대기시간 0.01초
+            BloodTime--;//BloodTime에 -1
+
+        }
         Blood.SetActive(false); //피 이미지 비활성화
         BloodTime = 100f; //피 투명도 초기화
-        yield return null;
     }
 
 
@@ -174,7 +182,7 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(0.01f); //대기 시간 0.01
         }
         //반복 실행이 끝났을 때
-        yield return new WaitForSeconds(0.2f);대기 시간 0.2 후에 다음 실행 
+        yield return new WaitForSeconds(0.2f);//대기 시간 0.2 후에 다음 실행 
         while (Updown < 3.6f) // 만약 캐릭터 크기가 3.6보다 작으면 반복 실행
         {
             Run.transform.localScale = new Vector3(Updown, Updown, 1);

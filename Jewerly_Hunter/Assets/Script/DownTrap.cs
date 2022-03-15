@@ -24,7 +24,7 @@ public class DownTrap : MonoBehaviour
 
         if(Range < TRange + PRange && transform.position.y > 2.2f)
         {
-            transform.Translate(-0.12f, 0.0f, 0);
+            transform.Translate(-0.24f, 0.0f, 0);
             StartCoroutine("DT");
 
         }

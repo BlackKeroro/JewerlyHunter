@@ -13,7 +13,7 @@ public class TrapRot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 rot = new Vector3(0, 0, -3f);
+        Vector3 rot = new Vector3(0, 0, -12f);
         transform.Rotate(rot);
     }
 }
