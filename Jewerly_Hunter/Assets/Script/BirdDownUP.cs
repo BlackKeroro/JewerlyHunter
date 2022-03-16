@@ -8,6 +8,10 @@ public class BirdDownUP : MonoBehaviour
     float TRange = 15.0f;
     float PRange = 13.0f;
     float RoteTime = 0.0f;
+
+    float Speed = 8f;
+    bool isTurn = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,16 +26,22 @@ public class BirdDownUP : MonoBehaviour
         Vector2 Run = Trap - Player;
         float Range = Run.magnitude;
 
-
         if (Range < TRange + PRange)
         {
-            transform.Translate(-0.12f, 0.0f, 0);
+            if (transform.position.y > -0.4 && isTurn == false)
+            {
+                transform.position += Vector3.down * Speed * Time.deltaTime;
+                transform.position += Vector3.left * Speed * Time.deltaTime;
+            }
             RoteTime += Time.deltaTime;
             Destroy(gameObject, 4f);
         }
-        if(transform.position.y < -0.4f)
+        if(transform.position.y < -0.4f || isTurn == true)
         {
             transform.rotation = Quaternion.Euler(0, 0, -45f);
+            isTurn = true;
+            transform.position += Vector3.up * Speed * Time.deltaTime;
+            transform.position += Vector3.left * Speed * Time.deltaTime;
         }
         
     }

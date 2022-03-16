@@ -9,7 +9,7 @@ public class LeftTrap : MonoBehaviour
     float TRange = 8.0f;
     float PRange = 7.0f;
 
-
+    float Speed = 8f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class LeftTrap : MonoBehaviour
 
         if (Range < TRange + PRange)
         {
-            transform.Translate(-0.16f, 0f, 0f);
+            transform.position += Vector3.left * Speed * Time.deltaTime;
             StartCoroutine("DT");
         }
 

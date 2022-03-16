@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5737430485667634852}
   - component: {fileID: 5737430485667634853}
   - component: {fileID: 5737430485667634854}
+  - component: {fileID: 9165125611990584991}
   m_Layer: 0
   m_Name: gem_1
   m_TagString: Score
@@ -123,3 +124,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Csound: {fileID: 7026096265217068832, guid: b408510ac17e47a48b88a162fb7e1bab, type: 3}
+--- !u!95 &9165125611990584991
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737430485667634856}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5495bb88a136d5b489ad158fd48e7e88, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

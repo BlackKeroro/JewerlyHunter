@@ -8,6 +8,7 @@ public class DownTrap : MonoBehaviour
     float TRange = 7.0f;
     float PRange = 7.0f;
 
+    float Speed = 12f;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class DownTrap : MonoBehaviour
 
         if(Range < TRange + PRange && transform.position.y > 2.2f)
         {
-            transform.Translate(-0.24f, 0.0f, 0);
+            transform.position += Vector3.down * Speed * Time.deltaTime;
             StartCoroutine("DT");
 
         }

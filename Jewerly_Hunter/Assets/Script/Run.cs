@@ -11,6 +11,8 @@ public class Run : MonoBehaviour
 
     AudioSource DAU; //피격 오디오 소스
 
+    public GameObject HealthUp; // 체력 회복 이미지
+
     public GameObject DTeffect; //파괴 오브젝트 리팹
     // Start is called before the first frame update
     void Start()
@@ -86,6 +88,7 @@ public class Run : MonoBehaviour
                 Destroy(collision.gameObject);
 
             }
+            Instantiate(HealthUp, transform.position, transform.rotation); //체력 이펙트 생성
         }
         if (collision.gameObject.CompareTag("Giant")) // 만약 충돌한 오브젝트의 tag가 Giant일 때
         {

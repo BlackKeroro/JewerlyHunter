@@ -9,6 +9,7 @@ public class HighUpTrap : MonoBehaviour
     float TRange = 5.0f;
     float PRange = 5.0f;
 
+    float Speed = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +26,7 @@ public class HighUpTrap : MonoBehaviour
 
         if (Range < TRange + PRange && transform.position.y < -2.9f)
         {
-            Vector3 vec = new Vector3(0, 0.12f, 0);
-            transform.Translate(vec, Space.World);
+            transform.position += Vector3.up * Speed * Time.deltaTime;
             Debug.Log("실행");
             StartCoroutine("DT");
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8348654, g: 0.8076575, b: 0.8112371, a: 1}
+  m_IndirectSpecularColor: {r: 0.83486533, g: 0.8076575, b: 0.8112371, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -42895,6 +42895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  HealthUp: {fileID: 0}
   DTeffect: {fileID: 0}
 --- !u!212 &1178406741
 SpriteRenderer:
@@ -50170,6 +50171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  HealthUp: {fileID: 6205074922427961727, guid: 6723fb8ed471a744f8e903fc4252758a,
+    type: 3}
   DTeffect: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 3}
 --- !u!212 &1433944008
 SpriteRenderer:
