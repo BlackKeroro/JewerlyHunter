@@ -63,13 +63,10 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        //rb.velocity = new Vector2(MoveSpeed, 0);
         if (GM.hp > 0) //GameManager의 체력이 0보다 크면 실행
         {
-            //transform.position += transform.right * MoveSpeed * Time.deltaTime;
             Vector3 vec = new Vector3(MoveSpeed * Time.deltaTime, 0, 0); //Vector3 위치 값으로 캐릭터 이동 속도 설정
-            transform.Translate(vec); //Vector3의 값 vec만큼 이동
-            
+            transform.Translate(vec); //Vector3의 값 vec만큼 이동     
         }
 
         if (hit == true) //피격 판정이 true 일 때
@@ -157,7 +154,7 @@ public class PlayerController : MonoBehaviour
     {
 
         Blood.SetActive(true); //피 이미지 활성화
-        float BloodTime = 100f; //피 이미지 a(투명도)값
+        float BloodTime = 100f; //피 이미지 a(투명도)값 초기화
         while (BloodTime > 0) //BloodTime이 0 이상일 시 반복 실행
         {
             //피 이미지의 a값에 BloodTime 값을 적용
@@ -167,7 +164,6 @@ public class PlayerController : MonoBehaviour
 
         }
         Blood.SetActive(false); //피 이미지 비활성화
-        BloodTime = 100f; //피 투명도 초기화
     }
 
 
@@ -243,10 +239,7 @@ public class PlayerController : MonoBehaviour
             if (collision.gameObject.CompareTag("Ground"))//충돌한 Tag가 Ground일 때 
             {
                 JumpCount = 2;//점프 카운트 초기화
-
             }
-
-
         }
 
 }

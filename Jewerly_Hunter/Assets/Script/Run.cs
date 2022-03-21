@@ -62,13 +62,13 @@ public class Run : MonoBehaviour
                 if (GM.hp > 1) // 만약 GameManager의 hp가 1보다 클 경우
                 {
                     pc.isOndamage = true; //Ondamage 활성화
-                    pc.StartCoroutine("HitBlood");
+                    pc.StartCoroutine("HitBlood"); //피격 시 배경에 피 이미지 활성화 코루틴 실행
                     pc.StartCoroutine("Ondamage"); //PlayerController의 Ondamage 코루틴 실행
                 }
             }
             else if(pc.isGiant == true) // 만약 isGiant가 활성화 상태일 때
             {
-                Instantiate(DTeffect, collision.transform.position, collision.transform.rotation); //해당 오브젝트 위치에 파괴이펙트 생성 및 
+                Instantiate(DTeffect, collision.transform.position, collision.transform.rotation); //해당 오브젝트 위치에 파괴이펙트 생성
                 Destroy(collision.gameObject); // 해당 오브젝트 제거
             }
 

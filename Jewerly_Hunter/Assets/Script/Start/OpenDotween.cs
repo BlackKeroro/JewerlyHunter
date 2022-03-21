@@ -32,13 +32,10 @@ public class OpenDotween : MonoBehaviour
     void Start()
     {
         Maintxt = MainText.GetComponent<Text>();
-
         KeyB = KeyButton.GetComponent<Image>();
         Keytxt = KeyText.GetComponent<Text>();
-
         StartB = StartButton.GetComponent<Image>();
         Starttxt = StartText.GetComponent<Text>();
-
         RuleB = RuleButton.GetComponent<Image>();
         Ruletxt = RuleText.GetComponent<Text>();
 
@@ -47,8 +44,8 @@ public class OpenDotween : MonoBehaviour
 
     IEnumerator Dottween()
     {
-        yield return new WaitForSeconds(1.5f);
-        Maintxt.DOFade(1, 2);
+        yield return new WaitForSeconds(1.5f);//1.5초 뒤 실행
+        Maintxt.DOFade(1, 2);//텍스트 및 이미지의 투명도를 2초에 걸쳐 1(최대값)으로 변경
         yield return new WaitForSeconds(1f);
         KeyB.DOFade(1, 2);
         Keytxt.DOFade(1, 2);
