@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     public bool ismagnet = false; //자석 아이템 판정
 
     public SpriteRenderer sr; //Run 캐릭터 오브젝트의 Sprite Renderer
-    public SpriteRenderer sr2;
 
     GameManager GM; //Game Manager 오브젝트
 
@@ -43,7 +42,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         Cpos = GameObject.Find("CameraPos");
         sr.GetComponent<SpriteRenderer>(); 
-        sr2.GetComponent<SpriteRenderer>();
         BloodImg = Blood.GetComponent<Image>();
         
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -133,18 +131,15 @@ public class PlayerController : MonoBehaviour
             if (countTime % 2 == 0) //countTIme에 2를 게속 나눌 때 나머지 값이 0일 경우
             {
                 sr.color = new Color(255f / 255f, 255f / 255f, 255f / 255f, 90 / 255f); //캐릭터 투명도 값 적용
-                sr2.color = new Color(255f / 255f, 255f / 255f, 255f / 255f, 90 / 255f);
             }
             else
                 sr.color = new Color(255f/255f, 255f/255f, 255f/255f, 180/255f); // 캐리거 투명도 값 적용
-                sr2.color = new Color(255f/255f, 255f/255f, 255f/255f, 180/255f);
             yield return new WaitForSeconds(0.2f); //대기시간(투명도 변환 시간) 0.2초 = 0.2초마다 투명도 변함
 
             countTime++;//countTime 값 증가
         }
         //countTime이 끝날 경우
         sr.color = new Color(255f / 255f, 255f / 255f, 255f / 255f, 255 / 255f);
-        sr2.color = new Color(255f / 255f, 255f / 255f, 255f / 255f, 255 / 255f);
         countTime = 0; //countTime 초기화
         isOndamage = false; //Ondamage 비활성화
         yield return null;

@@ -65,13 +65,16 @@ public class StartGame : MonoBehaviour
     }
     IEnumerator OpenStart()
     {
+        //Fade의 투명도 값 초기화
         float fadecount = 0.0f;
         while (fadecount < 1.0f)
         {
-            fadecount += 0.01f;
+            //0.01초마다 투명도를 0.01씩 증가(최대 1)
+            fadecount += 0.01f; 
             yield return new WaitForSeconds(0.01f);
             Image.color = new Color(0, 0, 0, fadecount);
         }
+        //GameScene으로 다시 시작
         SceneManager.LoadScene("Game");
     }
 

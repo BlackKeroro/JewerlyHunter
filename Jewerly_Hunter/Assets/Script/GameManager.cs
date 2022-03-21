@@ -47,15 +47,17 @@ public class GameManager : MonoBehaviour
 
     void PlayerHPTime()
     {
+        //지속적으로 체력 감소
         hp -= Time.deltaTime * 3f;
         
+        //체력이 0 이하가 되거나 플레이어 위치의 Y 값이 -8.0 이하일 경우
         if (hp <= 0 || Player.transform.position.y < -8.0f)
         {
             if(isGameOver == false)
             {
-                hp = 0f;
-                GameOver.SetActive(true);
-                run.anim.SetTrigger("DieTrigger");
+                hp = 0f; // 체력 0으로 만들기
+                GameOver.SetActive(true); //GameOver UI 활성화
+                run.anim.SetTrigger("DieTrigger"); //Die 애니메이션 실행
                 isGameOver = true;
             }
         }

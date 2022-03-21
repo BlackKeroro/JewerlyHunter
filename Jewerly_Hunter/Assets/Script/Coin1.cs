@@ -38,10 +38,10 @@ public class Coin1 : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D Collision)
     {
-        if (Collision.gameObject.CompareTag("Player"))
+        if (Collision.gameObject.CompareTag("Player")) //플레이어와 충돌할 시
         {
-            GM.score += 1;
-            Instantiate(Csound, transform.position, transform.rotation);
+            GM.score += 1; //점수 추가
+            Instantiate(Csound, transform.position, transform.rotation);//해당 사운드를 가진 오브젝트 생성
             Destroy(gameObject);
         }
     }
