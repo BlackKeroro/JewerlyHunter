@@ -568,7 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cloudprefab: {fileID: 8083911875577058668, guid: 3ffdabbf47729814c910f29314c47893,
     type: 3}
-  createCloud: 12
+  createCloud: 7
 --- !u!4 &246539746
 Transform:
   m_ObjectHideFlags: 0
@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cloudprefab: {fileID: 1568165867208891020, guid: 85db09748eacd094d9179e102ff1eee8,
     type: 3}
-  createCloud: 16
+  createCloud: 6
 --- !u!4 &514168993
 Transform:
   m_ObjectHideFlags: 0
@@ -1499,7 +1499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cloudprefab: {fileID: 5230905922668315494, guid: 5f7ac4988c340a147a1d66b2030ee468,
     type: 3}
-  createCloud: 7
+  createCloud: 9
 --- !u!4 &719714838
 Transform:
   m_ObjectHideFlags: 0
